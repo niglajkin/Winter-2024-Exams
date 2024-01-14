@@ -19,3 +19,5 @@ const getValueBetween = (searchedString, prefix, suffix) => {
 
   return result;
 };
+
+module.exports = getValueBetween;
