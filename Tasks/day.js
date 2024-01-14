@@ -5,14 +5,13 @@
 'use strict';
 
 const DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-const incorrectInput = -1;
+const INCORRECT_INPUT = -1;
 
 const getDayNumber = (day) => {
   for (let i = 0; i < DAYS.length; i++) {
     if (day.startsWith(DAYS[i].toLowerCase())) return i + 1;
   }
-
-  return incorrectInput;
+  return INCORRECT_INPUT;
 };
 
 module.exports = getDayNumber;
