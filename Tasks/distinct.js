@@ -1,22 +1,16 @@
 // Return an array without duplicates
 
-//Step 2
-//Rewrite using for of instead of forEach
+//Step 3
+//Do not change incoming parameters
 
 'use strict';
 
 const removeDuplicates = (data) => {
   const result = new Set();
-  let index = 0;
   for (const element of data) {
-    if (result.has(element)) {
-      delete data[index];
-    } else {
-      result.add(element);
-    }
-    index++;
+    if (!result.has(element)) result.add(element);
   }
-  return data.filter((x) => typeof x === 'number');
+  return Array.from(result).filter((x) => typeof x === 'number');
 };
 
 module.exports = removeDuplicates;
