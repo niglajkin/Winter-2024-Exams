@@ -1,18 +1,25 @@
 // Compare two dictionaries
 
-let compare = (first_values, ...parameters_LIST) => {
-  const second_values = parameters_LIST[0];
-  let a = Object.keys(first_values);
-  let b = Object.keys(second_values);
-  if (a.join('-') !== b.join('-')) return false;
-  let e = true;
-  for (c of a) {
-    if (first_values[c] === second_values[c]) e = e && true;
+//Step 1
+//Add 'use strict'
+//Replace let with const were possible
+//Change naming
+
+'use strict';
+
+const compareDictionaries = (firstValues, ...parametersList) => {
+  const secondValues = parametersList[0];
+  const firstKeys = Object.keys(firstValues);
+  const secondKeys = Object.keys(secondValues);
+  if (firstKeys.join('-') !== secondKeys.join('-')) return false;
+  let result = true;
+  for (const key of firstKeys) {
+    if (firstValues[key] === secondValues[key]) result = result && true;
     else {
-      e = e && false;
+      result = result && false;
     }
   }
-  return e;
+  return result;
 };
 
-module.exports = compare;
+module.exports = compareDictionaries;
