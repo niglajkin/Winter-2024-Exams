@@ -1,19 +1,17 @@
 // Extract substring between prefix and suffix
 
-//Step 2
-//Remove unneeded blocks
+//Step 3
+//Combine getting indexes of prefix and suffix and checking if they are valid
 
 'use strict'
 
 const getValueBetween = (searchedString, prefix, suffix) => {
-  let index = searchedString.indexOf(prefix);
-  if (index === -1) return 'incorrect input';
-  const indexWithoutPrefix = index + prefix.length;
-  searchedString = searchedString.substring(indexWithoutPrefix);
-  index = searchedString.indexOf(suffix);
-  if (index === -1) return 'incorrect input';
-  searchedString = searchedString.substring(0, index);
+  const indexOfPrefix = searchedString.indexOf(prefix);
+  const indexOfSuffix = searchedString.indexOf(suffix);
+  if (indexOfPrefix === -1 || indexOfSuffix === -1) return '';
+
+  const indexWithoutPrefix = indexOfPrefix + prefix.length;
+  searchedString = searchedString.substring(indexWithoutPrefix, indexOfSuffix);
+  
   return searchedString;
 };
-
-module.exports = getValueBetween;
