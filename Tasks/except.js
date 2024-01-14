@@ -13,7 +13,6 @@ const copyArrayExcept = (incomingValuesArray, ...notNeededValues) => {
   for (const key of arrayKeys) {
     if (notNeededValues.includes(key)) delete result[key];
   }
-
   return result;
 };
 
